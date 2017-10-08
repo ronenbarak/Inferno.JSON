@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B28F094-B338-4EEB-A070-2C2A2DB1E3B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inferno</RootNamespace>
+    <AssemblyName>Inferno</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\PropertyExpressionExtractor.cs" />
+    <Compile Include="GroupJson.cs" />
+    <Compile Include="grisu.net\DiyFp.cs" />
+    <Compile Include="grisu.net\Grisu.cs" />
+    <Compile Include="grisu.net\GrisuDouble.cs" />
+    <Compile Include="grisu.net\PowersOfTenCache.cs" />
+    <Compile Include="Json.cs" />
+    <Compile Include="GlobalJSONSerilizer.cs" />
+    <Compile Include="JSONConfiguration.cs" />
+    <Compile Include="JSONSerilizer\IJSONSerilizer.cs" />
+    <Compile Include="JSONSerilizer\IProperySerilizer.cs" />
+    <Compile Include="JSONSerilizer\ISerilizerDefinition.cs" />
+    <Compile Include="JSONSerilizer\IStructProperySerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Arrays\TopLevelArrayJsonSerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Arrays\TopLevelEnumerableJsonSerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Class\IClassSerilizerFactory.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Class\IEntityJSONSerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Class\IFullSerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\StructSerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Struct\SubStructSerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Struct\LazyTopLevelStructJsonSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\ConstsString.cs" />
+    <Compile Include="JSONSerilizer\SessionSerilizerPack.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Class\SubClassJsonSerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Class\TopLevelClassJsonSerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\DelegateSerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Enum\EnumPropertySerilizer.cs" />
+    <Compile Include="JSONSerilizer\OtherSerilizers\Enum\EnumToUnderlinedType.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\BoolSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\ByteSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\CharSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\DecimalSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\DoubleSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\FloatSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\GuidSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\IntSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\LongSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\MicrosoftDateTimeSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PropertyFactory.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\SByteSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\ShortSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\StringSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\TimeSpanISO8601Serilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\UIntSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\ULongSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\UShortSerilizer.cs" />
+    <Compile Include="JSONSerilizer\PrimitiveSerilizers\Utils.cs" />
+    <Compile Include="JSONSerilizer\SerilizerDefinition.cs" />
+    <Compile Include="JSONSerilizer\TypeSerilizerRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerilizerBufferAllocator\NewMemoryAllocationPerCall.cs" />
+    <Compile Include="SerilizerBufferAllocator\ThreadStaticBuffer.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
